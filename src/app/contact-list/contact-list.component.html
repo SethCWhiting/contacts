@@ -1,0 +1,7 @@
+<div class="container" *ngFor="let item of items | async; let i = index">
+  <div class="row">
+    <div class="col">
+      <p>{{ item.message }}</p>
+    </div>
+  </div>
+</div>
