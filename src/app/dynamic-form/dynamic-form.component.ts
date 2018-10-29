@@ -1,6 +1,7 @@
 import { Component, Input, OnInit }  from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { Router } from '@angular/router';
 
 import { FieldBase } from './field-base';
 import { FieldControlService } from './field-control.service';
@@ -16,7 +17,11 @@ export class DynamicFormComponent implements OnInit {
   form: FormGroup;
   itemsRef: AngularFireList<any>;
 
-  constructor(private fcs: FieldControlService, db: AngularFireDatabase) {
+  constructor(
+    private fcs: FieldControlService,
+    private db: AngularFireDatabase,
+    private router: Router
+  ) {
     this.itemsRef = db.list('contacts');
   }
 
@@ -26,6 +31,7 @@ export class DynamicFormComponent implements OnInit {
 
   onSubmit() {
     this.itemsRef.push(this.form.value);
+    this.router.navigate(['/']);
   }
 
 }

@@ -1,3 +1,10 @@
-<p>
-  contact-detail works!
-</p>
+<a href="/">&lsaquo; Back</a>
+<div *ngIf="item | async as item">
+  <h3>{{ item.firstName }}</h3>
+  <div>
+    <label>Email: </label>{{ item.emailAddress }}</div>
+  <div>
+    <label>Bravery: </label>
+    {{ item.brave }}
+  </div>
+</div>
