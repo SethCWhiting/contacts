@@ -27,4 +27,11 @@ export class ContactDetailComponent implements OnInit {
     );
   }
 
+  delete() {
+    this.route.params.subscribe((params) => {
+      this.service.removeContact(params['id']);
+    });
+    this.router.navigate(['/']);
+  }
+
 }

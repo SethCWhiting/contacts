@@ -12,7 +12,6 @@ import { Contact } from './contact';
 export class ContactService {
   itemsRef: AngularFireList<any>;
   items: Observable<Contact[]>;
-  // itemRef: AngularFireObject<Contact>;
   item: Observable<any>;
 
   constructor(private db: AngularFireDatabase) {
@@ -31,17 +30,15 @@ export class ContactService {
 
   getContact(key:string) {
     this.item = this.db.object(`contacts/${key}`).valueChanges();
-    // this.item = this.itemRef.snapshotChanges().pipe(
-    //   map(changes =>
-    //     changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-    //   )
-    // );
-
     return this.item;
-    // return this.getContacts().pipe(
-    //   map((contacts: Contact[]) => contacts.find(contact => contact.id === id))
-    // );
   }
+
+  removeContact(key:string) {
+    console.log(key);
+    const itemRef = this.db.object(`contacts/${key}`);
+    itemRef.remove();
+  }
+
 }
 
 
