@@ -1,5 +1,6 @@
 import { Component, Input, OnInit }  from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 
 import { FieldBase } from './field-base';
 import { FieldControlService } from './field-control.service';
@@ -11,19 +12,20 @@ import { FieldControlService } from './field-control.service';
   providers: [ FieldControlService ]
 })
 export class DynamicFormComponent implements OnInit {
-
   @Input() fields: FieldBase<any>[] = [];
   form: FormGroup;
-  payLoad = '';
+  itemsRef: AngularFireList<any>;
 
-  constructor(private qcs: FieldControlService) {  }
+  constructor(private fcs: FieldControlService, db: AngularFireDatabase) {
+    this.itemsRef = db.list('contacts');
+  }
 
   ngOnInit() {
-    this.form = this.qcs.toFormGroup(this.fields);
+    this.form = this.fcs.toFormGroup(this.fields);
   }
 
   onSubmit() {
-    this.payLoad = JSON.stringify(this.form.value);
+    this.itemsRef.push(this.form.value);
   }
 
 }
