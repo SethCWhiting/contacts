@@ -14,6 +14,7 @@ export class FieldService {
       new DropdownField({
         key: 'brave',
         label: 'Bravery Rating',
+        placeholder: 'Select One',
         options: [
           {key: 'solid',  value: 'Solid'},
           {key: 'great',  value: 'Great'},
@@ -26,7 +27,6 @@ export class FieldService {
       new TextboxField({
         key: 'firstName',
         label: 'First name',
-        value: 'Bombasto',
         required: true,
         order: 1
       }),
