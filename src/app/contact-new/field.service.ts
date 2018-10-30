@@ -8,14 +8,13 @@ import { Contact } from '../contact';
 @Injectable()
 export class FieldService {
 
-  getFields(contact:Contact) {
+  getFields() {
 
     let fields: FieldBase<any>[] = [
 
       new DropdownField({
         key: 'brave',
         label: 'Bravery Rating',
-        value: contact ? contact.brave : null,
         options: [
           {key: 'solid',  value: 'Solid'},
           {key: 'great',  value: 'Great'},
@@ -28,7 +27,6 @@ export class FieldService {
       new TextboxField({
         key: 'firstName',
         label: 'First name',
-        value: contact ? contact.firstName : null,
         required: true,
         order: 1
       }),
@@ -36,7 +34,6 @@ export class FieldService {
       new TextboxField({
         key: 'emailAddress',
         label: 'Email',
-        value: contact ? contact.emailAddress : null,
         type: 'email',
         order: 2
       })

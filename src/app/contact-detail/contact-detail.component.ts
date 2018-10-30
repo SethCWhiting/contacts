@@ -25,17 +25,7 @@ export class ContactDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.fields = this.fs.getFields(null);
-    this.item = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-        this.cs.getContact(params.get('id')))
-    );
-    this.item.subscribe(
-      (snap) => {
-        this.fields = this.fs.getFields(snap);
-        console.log(this.fields);
-      }
-    );
+    this.fields = this.fs.getFields();
   }
 
   delete() {
