@@ -1,11 +1,5 @@
 <a href="/">&lsaquo; Back</a>
-<div *ngIf="item | async as item">
-  <h3>{{ item.firstName }}</h3>
-  <div>
-    <label>Email: </label>{{ item.emailAddress }}</div>
-  <div>
-    <label>Bravery: </label>
-    {{ item.brave }}
-  </div>
+<div>
+  <app-dynamic-form [fields]="fields"></app-dynamic-form>
 </div>
 <button class="btn btn-danger" (click)="delete()">delete</button>

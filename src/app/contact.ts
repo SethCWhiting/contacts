@@ -1,6 +1,8 @@
 export class Contact {
   id: string;
-  name: string;
+  firstName: string;
+  brave: string;
+  emailAddress: string;
 }
 
 

@@ -13,7 +13,7 @@ export class ContactNewComponent {
   fields: any[];
 
   constructor(service: FieldService) {
-    this.fields = service.getFields();
+    this.fields = service.getFields(null);
   }
 
 }

@@ -3,17 +3,19 @@ import { Injectable } from '@angular/core';
 import { DropdownField } from '../dynamic-form/field-dropdown';
 import { FieldBase } from '../dynamic-form/field-base';
 import { TextboxField } from '../dynamic-form/field-textbox';
+import { Contact } from '../contact';
 
 @Injectable()
 export class FieldService {
 
-  getFields() {
+  getFields(contact:Contact) {
 
     let fields: FieldBase<any>[] = [
 
       new DropdownField({
         key: 'brave',
         label: 'Bravery Rating',
+        value: contact ? contact.brave : null,
         options: [
           {key: 'solid',  value: 'Solid'},
           {key: 'great',  value: 'Great'},
@@ -26,7 +28,7 @@ export class FieldService {
       new TextboxField({
         key: 'firstName',
         label: 'First name',
-        value: 'Bombasto',
+        value: contact ? contact.firstName : null,
         required: true,
         order: 1
       }),
@@ -34,6 +36,7 @@ export class FieldService {
       new TextboxField({
         key: 'emailAddress',
         label: 'Email',
+        value: contact ? contact.emailAddress : null,
         type: 'email',
         order: 2
       })
