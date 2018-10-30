@@ -1,13 +1,11 @@
-<div>
-  <form (ngSubmit)="onSubmit()" [formGroup]="form">
-
-    <div *ngFor="let field of fields" class="form-row">
-      <app-field [field]="field" [form]="form"></app-field>
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <div class="card-body">
+    <div *ngFor="let field of fields" class="form-row form-group">
+      <app-field [field]="field" [form]="form" style="width:100%;"></app-field>
     </div>
+  </div>
 
-    <div class="form-row">
-      <button type="submit" [disabled]="!form.valid">Save</button>
-    </div>
-  </form>
-
-</div>
+  <div class="card-footer d-flex justify-content-end">
+    <button type="submit" [disabled]="!form.valid" class="btn bg-transparent text-success">Save <span class="fa fa-check"></span></button>
+  </div>
+</form>
