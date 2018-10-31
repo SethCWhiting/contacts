@@ -3,6 +3,8 @@ export class FieldBase<T> {
   key: string;
   label: string;
   placeholder: string;
+  validationMessage: string;
+  type: string;
   required: boolean;
   order: number;
   controlType: string;
@@ -12,6 +14,8 @@ export class FieldBase<T> {
       key?: string,
       label?: string,
       placeholder?: string,
+      validationMessage?: string,
+      type?: string,
       required?: boolean,
       order?: number,
       controlType?: string
@@ -20,6 +24,8 @@ export class FieldBase<T> {
     this.key = options.key || '';
     this.label = options.label || '';
     this.placeholder = options.placeholder || '';
+    this.validationMessage = options.validationMessage || '';
+    this.type = options.type || '';
     this.required = !!options.required;
     this.order = options.order === undefined ? 1 : options.order;
     this.controlType = options.controlType || '';

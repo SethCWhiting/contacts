@@ -11,8 +11,19 @@ export class FieldControlService {
     let group: any = {};
 
     fields.forEach(field => {
-      group[field.key] = field.required ? new FormControl(field.value || '', Validators.required)
-                                              : new FormControl(field.value || '');
+      if (field.type == 'email') {
+        group[field.key] = new FormControl(field.value || '', Validators.email);
+      } else if (field.type == 'tel') {
+        group[field.key] = new FormControl(field.value || '', Validators.compose([
+          Validators.minLength(7),
+          Validators.maxLength(11),
+          Validators.pattern("^[0-9]*$")
+        ]));
+      } else if (field.required) {
+        group[field.key] = new FormControl(field.value || '', Validators.required);
+      } else {
+        group[field.key] = new FormControl(field.value || '');
+      }
     });
     return new FormGroup(group);
   }

@@ -8,6 +8,7 @@ import { TextboxField } from '../dynamic-form/field-textbox';
 export class FieldService {
 
   getFields() {
+    let requiredMessage:string = 'This field is required';
 
     let fields: FieldBase<any>[] = [
 
@@ -27,6 +28,7 @@ export class FieldService {
         key: 'firstName',
         label: 'First name*',
         required: true,
+        validationMessage: requiredMessage,
         order: 1
       }),
 
@@ -42,6 +44,7 @@ export class FieldService {
         label: 'Phone number',
         type: 'tel',
         required: false,
+        validationMessage: 'Must be a valid phone number',
         order: 4
       }),
 
@@ -49,6 +52,7 @@ export class FieldService {
         key: 'emailAddress',
         label: 'Email',
         type: 'email',
+        validationMessage: 'Must be a valid email address',
         required: false,
         order: 3
       })

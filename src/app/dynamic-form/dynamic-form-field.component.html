@@ -13,5 +13,5 @@
 
   </div>
 
-  <div class="errorMessage alert-danger px-2 py-1 mx-1" *ngIf="!isValid && touched">{{field.label}} is required</div>
+  <div class="errorMessage alert-danger px-2 py-1 mx-1" *ngIf="!isValid && touched">{{ field.validationMessage }}</div>
 </div>

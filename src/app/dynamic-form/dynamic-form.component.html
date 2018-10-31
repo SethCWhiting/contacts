@@ -16,7 +16,7 @@
         </button>
       </ng-template>
 
-      <div *ngIf="form.valid && form.touched then showSubmit"></div>
+      <div *ngIf="form.valid then showSubmit"></div>
       <ng-template #showSubmit>
         <button type="submit" [disabled]="!form.valid" class="btn bg-transparent text-success">
           Save <span class="fa fa-check"></span>
