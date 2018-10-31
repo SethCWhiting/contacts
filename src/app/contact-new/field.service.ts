@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { DropdownField } from '../dynamic-form/field-dropdown';
 import { FieldBase } from '../dynamic-form/field-base';
 import { TextboxField } from '../dynamic-form/field-textbox';
-import { Contact } from '../contact';
 
 @Injectable()
 export class FieldService {

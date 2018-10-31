@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 import { FieldBase } from './field-base';
 import { FieldControlService } from './field-control.service';
 import { ContactService }  from '../contact.service';
-import { Contact } from '../contact';
 
 
 @Component({

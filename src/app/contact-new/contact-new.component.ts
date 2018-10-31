@@ -11,7 +11,6 @@ import { FieldService } from './field.service';
 export class ContactNewComponent {
 
   fields: any[];
-  new:boolean = true;
 
   constructor(service: FieldService) {
     this.fields = service.getFields();
