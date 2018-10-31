@@ -4,11 +4,11 @@
       <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
           <h3 class="d-inline-block m-0">Contacts</h3>
-          <a href="/new" class="btn text-info pr-0"><span class="fa fa-plus"></span> Add Contact</a>
+          <a routerLink="/new" class="btn text-info pr-0"><span class="fa fa-plus"></span> Add Contact</a>
         </div>
         <ul class="list-group list-group-flush">
           <li *ngFor="let item of items | async; let i = index" class="list-group-item p-0">
-            <a href="contact/{{ item.key }}" class="d-block btn text-left px-4 py-2">{{ item.firstName }} {{ item.lastName }}</a>
+            <a routerLink="contact/{{ item.key }}" class="d-block btn text-left px-4 py-2">{{ item.firstName }} {{ item.lastName }}</a>
           </li>
         </ul>
       </div>
