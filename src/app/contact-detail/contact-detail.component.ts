@@ -28,11 +28,4 @@ export class ContactDetailComponent implements OnInit {
     this.fields = this.fs.getFields();
   }
 
-  delete() {
-    this.route.params.subscribe((params) => {
-      this.cs.removeContact(params['id']);
-    });
-    this.router.navigate(['/']);
-  }
-
 }

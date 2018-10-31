@@ -25,10 +25,34 @@ export const firebaseConfig = {
 };
 
 const appRoutes: Routes = [
-  { path: 'contact/:id', component: ContactDetailComponent },
-  { path: 'new', component: ContactNewComponent },
-  { path: '', component: ContactListComponent },
-  { path: '**', component: PageNotFoundComponent }
+  {
+    path: 'contact/:id',
+    component: ContactDetailComponent,
+    data: {
+      title: 'detail'
+    }
+  },
+  {
+    path: 'new',
+    component: ContactNewComponent,
+    data: {
+      title: 'new'
+    }
+  },
+  {
+    path: '',
+    component: ContactListComponent,
+    data: {
+      title: 'home'
+    }
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
+    data: {
+      title: '404'
+    }
+   }
 ];
 
 @NgModule({
