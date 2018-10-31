@@ -11,4 +11,5 @@ export class DynamicFormFieldComponent {
   @Input() field: FieldBase<any>;
   @Input() form: FormGroup;
   get isValid() { return this.form.controls[this.field.key].valid; }
+  get touched() { return this.form.controls[this.field.key].touched; }
 }

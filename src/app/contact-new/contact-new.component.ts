@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { FieldService } from './field.service';
+import { FieldService } from '../dynamic-form/field.service';
 
 @Component({
   selector: 'app-contact-new',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { FieldService } from '../contact-new/field.service';
+import { FieldService } from '../dynamic-form/field.service';
 import { Contact } from '../contact';
 
 @Component({

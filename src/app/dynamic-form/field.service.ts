@@ -12,30 +12,45 @@ export class FieldService {
     let fields: FieldBase<any>[] = [
 
       new DropdownField({
-        key: 'brave',
-        label: 'Bravery Rating',
+        key: 'gender',
+        label: 'Gender',
         placeholder: 'Select One',
         options: [
-          {key: 'solid',  value: 'Solid'},
-          {key: 'great',  value: 'Great'},
-          {key: 'good',   value: 'Good'},
-          {key: 'unproven', value: 'Unproven'}
+          {key: 'male',  value: 'Male'},
+          {key: 'female',  value: 'Female'}
         ],
-        order: 3
+        required: false,
+        order: 5
       }),
 
       new TextboxField({
         key: 'firstName',
-        label: 'First name',
+        label: 'First name*',
         required: true,
         order: 1
+      }),
+
+      new TextboxField({
+        key: 'lastName',
+        label: 'Last name',
+        required: false,
+        order: 2
+      }),
+
+      new TextboxField({
+        key: 'phoneNumber',
+        label: 'Phone number',
+        type: 'tel',
+        required: false,
+        order: 4
       }),
 
       new TextboxField({
         key: 'emailAddress',
         label: 'Email',
         type: 'email',
-        order: 2
+        required: false,
+        order: 3
       })
     ];
 

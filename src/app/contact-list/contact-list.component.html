@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container my-5">
   <div class="row justify-content-center">
     <div class="col-sm-9 col-lg-6">
       <div class="card">
@@ -8,7 +8,7 @@
         </div>
         <ul class="list-group list-group-flush">
           <li *ngFor="let item of items | async; let i = index" class="list-group-item p-0">
-            <a href="contact/{{ item.key }}" class="d-block btn text-left px-4 py-2">{{ item.firstName }}</a>
+            <a href="contact/{{ item.key }}" class="d-block btn text-left px-4 py-2">{{ item.firstName }} {{ item.lastName }}</a>
           </li>
         </ul>
       </div>
